@@ -1,0 +1,64 @@
+@import url("../node_modules/bulma/css/bulma.css");
+@font-face {
+  font-family: roundedElegance;
+  src: url(../font/Rounded_Elegance.ttf); }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: roundedElegance; }
+
+nav.navbar.is-dark {
+  background-color: #191919; }
+
+.is-full-width {
+  flex: none;
+  width: 100%; }
+
+#splash {
+  background-color: #191919;
+  background-image: url("../images/wave.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom; }
+  #splash h1 {
+    color: #fff; }
+  #splash h2 {
+    color: #fff; }
+  #splash .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  #splash i {
+    color: #fff; }
+  #splash #splash-footer {
+    display: block;
+    text-align: right; }
+
+#socialize {
+  background-color: #a17db8;
+  color: #fff; }
+  #socialize .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+#influence {
+  background-color: white;
+  color: #191919; }
+  #influence .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+#discover {
+  background-color: #ca479a;
+  color: #fff; }
+  #discover .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+#footer {
+  background-color: #191919;
+  color: #fff; }

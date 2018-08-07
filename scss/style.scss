@@ -1,0 +1,107 @@
+@import url("../node_modules/bulma/css/bulma.css");
+@import "_font";
+
+$brand-color: #E24301;
+$dark-color: #333;
+$lite-color: #FFF;
+
+
+$color-purple: #a17db8;
+$color-pink: #ca479a;
+$color-dark: #191919;
+$color-light: #fff;
+
+$font: roundedElegance;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: $font;
+}
+
+nav.navbar {
+  &.is-dark {
+    background-color: $color-dark;
+  }
+}
+
+.is-full-width {
+  flex: none;
+  width: 100%;
+}
+
+
+#splash {
+  background-color: $color-dark;
+  background-image: url('../images/wave.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+
+
+  .container {
+    
+    
+  }
+
+  h1 {
+    color: $color-light;
+  }
+
+  h2 {
+    color: $color-light;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  i {
+    color: $color-light;
+  }
+  #splash-footer {
+    display: block;
+    text-align: right;
+  }
+  
+}
+
+#socialize {
+  background-color: $color-purple;
+  color: $color-light;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#influence {
+  background-color: white;
+  color: $color-dark;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#discover {
+  background-color: $color-pink;
+  color: $color-light;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#footer {
+  background-color: $color-dark;
+  color: $color-light;
+}
