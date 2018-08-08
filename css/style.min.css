@@ -178,6 +178,7 @@ nav.navbar {
     justify-content: center; }
 
 #discover {
+  position: relative;
   background-color: #ca479a;
   color: #fff; }
   #discover h1 {
@@ -185,23 +186,48 @@ nav.navbar {
   #discover .subtitle {
     color: #fff; }
   #discover .columns {
-    justify-content: space-between; }
+    justify-content: flex-end; }
   #discover .column {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+  #discover .bubble-event {
+    position: absolute;
+    left: 3em;
+    top: 50%;
+    width: 200px;
+    z-index: 10; }
+  #discover .bubble-phone {
+    position: absolute;
+    width: 150px;
+    left: 30%;
+    top: 40%; }
+  #discover .bubble-folks {
+    position: absolute;
+    width: 250px;
+    bottom: 4em;
+    left: 30%;
+    z-index: 10; }
+  #discover .bubble-cut {
+    position: absolute;
+    bottom: 0px;
+    left: -2em;
+    width: 40%; }
 
 #footer {
+  position: relative;
   background-color: #191919;
-  color: #fff; }
+  color: #fff;
+  overflow: hidden; }
   #footer h1 {
     color: #fff; }
   #footer .subtitle {
     color: #fff; }
     #footer .subtitle.alt {
       color: #ca479a;
-      font-weight: normal;
-      /*font-size: 1.7em;*/ }
+      font-weight: normal; }
+  #footer .column {
+    z-index: 10; }
   #footer .subscribe-form .input-wrapper {
     flex: 1; }
   #footer .subscribe-form .input {
@@ -232,3 +258,9 @@ nav.navbar {
     color: #fff;
     display: block;
     font-size: .75em; }
+  #footer .bubble-gradient {
+    z-index: 1;
+    position: absolute;
+    width: 30%;
+    bottom: -10%;
+    left: -5%; }

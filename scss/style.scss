@@ -277,6 +277,7 @@ nav.navbar {
 }
 
 #discover {
+  position: relative;
   background-color: $color-pink;
   color: $color-light;
 
@@ -289,7 +290,7 @@ nav.navbar {
   }
 
   .columns {
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .column {
@@ -297,11 +298,43 @@ nav.navbar {
     flex-direction: column;
     justify-content: center;
   }
+
+  .bubble-event {
+    position: absolute;
+    left: 3em;
+    top: 50%;
+    width: 200px;
+    z-index: 10;
+  }
+
+  .bubble-phone {
+    position: absolute;
+    width: 150px;
+    left: 30%;
+    top: 40%;
+  }
+
+  .bubble-folks {
+    position: absolute;
+    width: 250px;
+    bottom: 4em;
+    left: 30%;
+    z-index: 10;
+  }
+
+  .bubble-cut {
+    position: absolute;
+    bottom: 0px;
+    left: -2em;
+    width: 40%;
+  }
 }
 
 #footer {
+  position: relative;
   background-color: $color-dark;
   color: $color-light;
+  overflow: hidden;
 
   h1 {
     color: $color-light;
@@ -313,8 +346,11 @@ nav.navbar {
     &.alt {
       color: $color-pink;
       font-weight: normal;
-      /*font-size: 1.7em;*/
     }
+  }
+
+  .column {
+    z-index: 10;
   }
 
   .subscribe-form {
@@ -359,5 +395,13 @@ nav.navbar {
       display: block;
       font-size: .75em;
     }
+  }
+
+  .bubble-gradient {
+    z-index: 1;
+    position: absolute;
+    width: 30%;
+    bottom: -10%;
+    left: -5%;
   }
 }
