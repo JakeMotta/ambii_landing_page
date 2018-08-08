@@ -46,29 +46,6 @@ html, body {
   }
 }
 
-.ellipse-pink {
-  background-image: url('../images/ellipse-pink.svg');
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 5%;
-  bottom: -100%;
-  width: 250px;
-  height: 250px;
-}
-
-.ellipse-purple {
-  background-image: url('../images/ellipse-purple.svg');
-  background-repeat: no-repeat;
-  position: absolute;
-  left: -5%;
-  bottom: -220%;
-  width: 450px;
-  height: 450px;
-}
-
-
-
-
 h1.title {
   font-size: 3em;
 }
@@ -112,9 +89,16 @@ h1.title {
 }
 
 nav.navbar {
+  position: relative;
+  z-index: 300;
   padding: 2em 4em;
   font-weight: bold;
   transition: ease-in-out all .4s;
+
+  &.is-transparent {
+    background: transparent;
+  }
+  
   &.is-dark {
     background-color: $color-dark;
 
@@ -127,9 +111,15 @@ nav.navbar {
     }
   }
 
-  .navbar-item img {
-    max-height: 3rem;
-    transition: ease-in-out all .4s;
+  .navbar-item {
+    &:hover {
+      background-color: $color-dark !important;
+    }
+
+    img {
+      max-height: 3rem;
+      transition: ease-in-out all .4s;
+    }
   }
 
   &.is-light {
@@ -147,8 +137,13 @@ nav.navbar {
   &.scrolled {
     padding: 1em 4em;
 
-    .navbar-item img {
-      max-height: 2.5em;
+    .navbar-item {
+      &.active {
+        color: $color-light !important;
+      }
+      img {
+        max-height: 2.5em;
+      }
     }
   }
 }
@@ -231,10 +226,10 @@ nav.navbar {
     text-align: right;
     margin: 0 -3em;
   }
-  
 }
 
 #socialize {
+  position: relative;
   background-color: $color-purple;
   color: $color-light;
 
@@ -255,6 +250,17 @@ nav.navbar {
     flex-direction: column;
     justify-content: center;
   }
+
+  .ellipse-pink {
+    z-index: 10;
+    background-image: url('../images/ellipse-pink.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 5%;
+    bottom: -10%;
+    width: 250px;
+    height: 250px;
+  }
 }
 
 #influence {
@@ -273,6 +279,17 @@ nav.navbar {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .ellipse-purple {
+    background-image: url('../images/ellipse-purple.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -5%;
+    bottom: -220%;
+    width: 450px;
+    height: 450px;
+    z-index: 10;
   }
 }
 

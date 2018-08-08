@@ -27,24 +27,6 @@ html, body {
     flex-direction: column;
     justify-content: flex-end; }
 
-.ellipse-pink {
-  background-image: url("../images/ellipse-pink.svg");
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 5%;
-  bottom: -100%;
-  width: 250px;
-  height: 250px; }
-
-.ellipse-purple {
-  background-image: url("../images/ellipse-purple.svg");
-  background-repeat: no-repeat;
-  position: absolute;
-  left: -5%;
-  bottom: -220%;
-  width: 450px;
-  height: 450px; }
-
 h1.title {
   font-size: 3em; }
 
@@ -76,15 +58,21 @@ h1.title {
     background: linear-gradient(to right, #a17db8, #ca479a); }
 
 nav.navbar {
+  position: relative;
+  z-index: 300;
   padding: 2em 4em;
   font-weight: bold;
   transition: ease-in-out all .4s; }
+  nav.navbar.is-transparent {
+    background: transparent; }
   nav.navbar.is-dark {
     background-color: #191919; }
     nav.navbar.is-dark .logo-color {
       display: initial; }
     nav.navbar.is-dark .logo-white {
       display: none; }
+  nav.navbar .navbar-item:hover {
+    background-color: #191919 !important; }
   nav.navbar .navbar-item img {
     max-height: 3rem;
     transition: ease-in-out all .4s; }
@@ -96,6 +84,8 @@ nav.navbar {
       display: none; }
   nav.navbar.scrolled {
     padding: 1em 4em; }
+    nav.navbar.scrolled .navbar-item.active {
+      color: #fff !important; }
     nav.navbar.scrolled .navbar-item img {
       max-height: 2.5em; }
 
@@ -152,6 +142,7 @@ nav.navbar {
     margin: 0 -3em; }
 
 #socialize {
+  position: relative;
   background-color: #a17db8;
   color: #fff; }
   #socialize h1 {
@@ -164,6 +155,15 @@ nav.navbar {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+  #socialize .ellipse-pink {
+    z-index: 10;
+    background-image: url("../images/ellipse-pink.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 5%;
+    bottom: -10%;
+    width: 250px;
+    height: 250px; }
 
 #influence {
   background-color: white;
@@ -176,6 +176,15 @@ nav.navbar {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+  #influence .ellipse-purple {
+    background-image: url("../images/ellipse-purple.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -5%;
+    bottom: -220%;
+    width: 450px;
+    height: 450px;
+    z-index: 10; }
 
 #discover {
   position: relative;

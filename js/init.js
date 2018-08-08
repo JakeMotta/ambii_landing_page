@@ -23,10 +23,8 @@ $(document).ready(function(){
     });
   }
 
+  // scroll animations
   new WOW().init();
-
-
-
 
   $(document).scroll(function () {
 
@@ -37,19 +35,14 @@ $(document).ready(function(){
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
 
     if ( $window.scrollTop() >= lightDistance ) {
-
       if($nav.hasClass("is-dark")) {
         $nav.removeClass("is-dark").addClass("is-light");
       }
-      
-    } else {
+    }
+    else {
       if($nav.hasClass("is-light")) {
         $nav.removeClass("is-light").addClass("is-dark");
       }
     }
-
   });
-
-
-
 });
