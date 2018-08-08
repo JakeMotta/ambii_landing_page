@@ -8,7 +8,9 @@
   <meta name="author" content="">
   <meta property="og:image" content="images/shareimg.jpg">
   <title>ambii.io</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body class="has-navbar-fixed-top">
@@ -16,7 +18,8 @@
   <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item is-vcentered" href="/">
-        <img src="images/logo-side-color.png" alt="ambii.io">
+        <img class="logo-color" src="images/logo-side-color.png" alt="ambii.io">
+        <img class="logo-white" src="images/logo-side-color.png" alt="ambii.io">
       </a>
      
       <button class="button navbar-burger" data-target="navMenu">
@@ -58,11 +61,11 @@
   </nav>
 
 
-<section class="section" id="splash">
-    <div class="container">
+<section class="section is-vertical-center" id="splash">
+    <div class="container is-fluid is-full-width">
       <div class="columns">
-        <div class="column" >
-          <h1 class="title">Experience <br> Social Listening</h1>
+        <div class="column is-two-fifths wow fadeInLeft" >
+          <h1 class="title is-spaced">Experience <br> Social Listening</h1>
           <p class="subtitle">
             Listen to everyone's favority music<br> with any group, anywhere.
           </p>
@@ -74,17 +77,18 @@
             </p>
           </div>
         </div>
-        <div class="column">
+        <div class="column is-half wow fadeInRight">
           <img src="images/landing-info-g.svg">
         </div>
       </div>
-      <div id="splash-footer">
-        <a target="_blank" href="">
+      <div class="has-text-right wow fadeInUp">
+        
+        <a class="social-link" target="_blank" href="">
           <span class="icon">
             <i class="fab fa-facebook-f"></i>
           </span>
         </a>
-        <a target="_blank" href="">
+        <a class="social-link" target="_blank" href="">
           <span class="icon">
             <i class="fab fa-instagram"></i>
           </span>
@@ -94,16 +98,15 @@
 
 </section>
 
-<section class="section" id="socialize">
-
-  <div class="container">
+<section class="section is-full-height is-vertical-center" id="socialize">
+  <div class="container is-fluid ">
     <div class="columns">
-      <div class="column">
+      <div class="column is-two-fifths wow fadeInLeft">
         <img src="images/socialize-info-g.svg">
       </div>
-      <div class="column">
-        <p>Socialize</p>
-        <h2>Create or Join Parties</h2>
+      <div class="column is-two-fifths wow fadeInRight">
+        <p class="section-name">Socialize</p>
+        <h1 class="title is-spaced">Create or Join Parties</h1>
         <p class="subtitle">
           Easily create parties and invite friends with unique party keys. Or have them host and invite you! Listen with Ambii for any occation!
         </p>
@@ -119,25 +122,25 @@
   </div>
 </section>
 
-<section class="section" id="influence">
+<section class="section is-full-height is-vertical-center" id="influence">
 
-  <div class="container">
+  <div class="container is-fluid">
     <div class="columns">
-      <div class="column">
-        <p>Influence</p>
-        <h2>Everyone Contributes</h2>
+      <div class="column is-two-fifths has-text-right wow fadeInLeft">
+        <p class="section-name">Influence</p>
+        <h1 class="title is-spaced">Everyone Contributes</h1>
         <p class="subtitle">
           Anyone in the party can add any song to the queue. Ambii automatically curates suggested songs based on everyone's music taste.
         </p>
         <div class="field">
-          <p class="control">
+          <p class="control has-text-right">
             <a class="button">
               Start Listening
             </a>
           </p>
         </div>
       </div>
-      <div class="column">
+      <div class="column is-two-fifths wow fadeInRight">
         <img src="images/influence-info-g.svg">
       </div>
     </div>
@@ -145,20 +148,22 @@
 
 </section>
 
-<section class="section" id="discover">
+<section class="section is-full-height is-vertical-center" id="discover">
 
-  <div class="container">
+  <div class="container is-fluid">
     <div class="columns">
-      <div class="column"></div>
-      <div class="column">
-        <p>Discover</p>
-        <h2>New Music, New People</h2>
+      <div class="column is-two-fifths wow fadeInLeft">
+        stuff goes here
+      </div>
+      <div class="column is-two-fifths wow fadeInRight">
+        <p class="section-name">Discover</p>
+        <h1 class="title is-spaced">New Music, New People</h1>
         <p class="subtitle">
           Listen to new music suggestions customized for your group or join public parties and see whats popular in your area.
         </p>
         <div class="field">
           <p class="control">
-            <a class="button">
+            <a class="button alt">
               Start Listening
             </a>
           </p>
@@ -169,9 +174,12 @@
 
 </section>
 
-<section class="section" id="footer">
+<div class="ellipse-pink"></div>
+<div class="ellipse-purple"></div>
 
-    <div class="container">
+<section class="section is-full-height" id="footer">
+
+    <div class="container is-fluid">
      footer stuff here
     </div>
 
@@ -179,6 +187,7 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="js/init.js"></script>
 
 

@@ -22,4 +22,34 @@ $(document).ready(function(){
       });
     });
   }
+
+  new WOW().init();
+
+
+
+
+  $(document).scroll(function () {
+
+    var $nav = $(".is-fixed-top");
+    $window = $(window);
+    var lightDistance = $('#influence').offset().top;
+
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+
+    if ( $window.scrollTop() >= lightDistance ) {
+
+      if($nav.hasClass("is-dark")) {
+        $nav.removeClass("is-dark").addClass("is-light");
+      }
+      
+    } else {
+      if($nav.hasClass("is-light")) {
+        $nav.removeClass("is-light").addClass("is-dark");
+      }
+    }
+
+  });
+
+
+
 });
