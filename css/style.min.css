@@ -20,6 +20,13 @@ html, body {
   display: flex;
   align-items: center; }
 
+.is-vertical-bottom {
+  display: flex;
+  align-items: flex-end; }
+  .is-vertical-bottom.flex-direction-column {
+    flex-direction: column;
+    justify-content: flex-end; }
+
 .ellipse-pink {
   background-image: url("../images/ellipse-pink.svg");
   background-repeat: no-repeat;
@@ -61,6 +68,12 @@ h1.title {
   .button.alt {
     background-color: #a17db8;
     border-color: #a17db8; }
+  .button.box {
+    border-radius: 4px; }
+  .button.gradient-btm {
+    background: linear-gradient(to bottom, #a17db8, #ca479a); }
+  .button.gradient-right {
+    background: linear-gradient(to right, #a17db8, #ca479a); }
 
 nav.navbar {
   padding: 2em 4em;
@@ -111,9 +124,32 @@ nav.navbar {
   #splash i {
     color: #fff;
     font-size: 1.5em; }
+  #splash .cta-text {
+    margin-top: 3em;
+    color: #fff;
+    font-size: 1.5em; }
+  #splash .subscribe-form .input-wrapper {
+    flex: 1; }
+  #splash .subscribe-form .input {
+    border: 2px solid #a17db8;
+    background-color: #191919;
+    color: #fff; }
+    #splash .subscribe-form .input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #fff; }
+    #splash .subscribe-form .input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #fff; }
+    #splash .subscribe-form .input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: #fff; }
+    #splash .subscribe-form .input:-moz-placeholder {
+      /* Firefox 18- */
+      color: #fff; }
   #splash #splash-footer {
     display: block;
-    text-align: right; }
+    text-align: right;
+    margin: 0 -3em; }
 
 #socialize {
   background-color: #a17db8;
@@ -158,3 +194,41 @@ nav.navbar {
 #footer {
   background-color: #191919;
   color: #fff; }
+  #footer h1 {
+    color: #fff; }
+  #footer .subtitle {
+    color: #fff; }
+    #footer .subtitle.alt {
+      color: #ca479a;
+      font-weight: normal;
+      /*font-size: 1.7em;*/ }
+  #footer .subscribe-form .input-wrapper {
+    flex: 1; }
+  #footer .subscribe-form .input {
+    border: 2px solid #ca479a;
+    background: linear-gradient(to right, rgba(161, 125, 184, 0.4), rgba(202, 71, 154, 0.4));
+    color: #fff;
+    border-bottom-left-radius: 1.5em;
+    border-top-left-radius: 1.5em;
+    padding: 1em; }
+    #footer .subscribe-form .input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #fff; }
+    #footer .subscribe-form .input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #fff; }
+    #footer .subscribe-form .input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: #fff; }
+    #footer .subscribe-form .input:-moz-placeholder {
+      /* Firefox 18- */
+      color: #fff; }
+  #footer .subscribe-form .submit-wrapper {
+    margin-left: -1.5em;
+    z-index: 30; }
+    #footer .subscribe-form .submit-wrapper .submit {
+      border-radius: 1.5em !important; }
+  #footer .social-links .social-link {
+    color: #fff;
+    display: block;
+    font-size: .75em; }
