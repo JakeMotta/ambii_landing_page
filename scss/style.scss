@@ -118,6 +118,8 @@ nav.navbar {
   }
 
   .navbar-item {
+    
+    transition: ease-in-out all .4s;
     &:hover {
       background-color: $color-dark !important;
     }
@@ -125,6 +127,14 @@ nav.navbar {
     img {
       max-height: 3rem;
       transition: ease-in-out all .4s;
+    }
+
+    &.is-active {
+      background-color: $color-dark !important;
+
+      &:after {
+        background-color: $color-pink;
+      }
     }
   }
 
@@ -142,13 +152,21 @@ nav.navbar {
     .navbar-burger {
       color: $color-dark;
     }
+
+    .navbar-item {
+
+      &.is-active {
+        background: $color-light !important;
+        color: $color-dark !important;
+      }
+    }
   }
 
   &.scrolled {
     /*padding: 1em 4em;*/
 
     .navbar-item {
-      &.active {
+      &.is-active {
         color: $color-light !important;
       }
       img {
@@ -160,8 +178,49 @@ nav.navbar {
   @media (min-width: $breakpoint-desktop-start) {
     padding: 2em 4em;
 
+    .navbar-item {
+      flex-direction: column;
+      justify-content: center;
+
+      transition: ease-in-out all .4s;
+
+       &:after {
+        content:'';
+        height: 4px;
+        margin-top: 5px;
+        width: 4px;
+        background-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+
+        transition: ease-in-out all .4s;
+      }
+    
+    }
+
     &.scrolled {
       padding: 1em 4em;
+
+      .navbar-item {
+        color: $color-grey !important;
+
+        &.is-active {
+          color: $color-light !important;
+        }
+      }
+
+      &.is-light {
+        .navbar-item {
+
+          &:hover {
+            background-color: $color-light !important;
+          }
+
+          &.is-active {
+            color: $color-dark !important;
+          }
+        }
+      }
     }
   }
 }
