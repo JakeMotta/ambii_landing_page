@@ -136,6 +136,12 @@ nav.navbar {
         background-color: $color-pink;
       }
     }
+
+    &.is-spaced {
+      @media (min-width: $breakpoint-tablet-start) {
+        margin-left: 3em
+      }
+    }
   }
 
   &.is-light {
