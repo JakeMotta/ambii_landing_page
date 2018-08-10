@@ -126,10 +126,8 @@ nav.navbar {
   }
 
   .navbar-item {
+    background-color: transparent !important;
     transition: ease-in-out all $animation-speed;
-    &:hover {
-      background-color: $color-dark !important;
-    }
 
     img {
       max-height: 3rem;
@@ -137,8 +135,6 @@ nav.navbar {
     }
 
     &.is-active {
-      background-color: $color-dark !important;
-
       &:after {
         background-color: $color-pink;
       }
@@ -152,8 +148,6 @@ nav.navbar {
   }
 
   &.is-light {
-    background-color: $color-light;
-
     .logo-color {
       display: initial;
     }
@@ -167,9 +161,9 @@ nav.navbar {
     }
 
     .navbar-item {
+      background-color: !important;
 
       &.is-active {
-        background: $color-light !important;
         color: $color-dark !important;
       }
     }
