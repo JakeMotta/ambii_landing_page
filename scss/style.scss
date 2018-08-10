@@ -1,26 +1,20 @@
-@import "_font";
-
-$brand-color: #E24301;
-$dark-color: #333;
-$lite-color: #FFF;
-
-
-$color-purple: #a17db8;
-$color-pink: #ca479a;
-$color-dark: #191919;
-$color-light: #fff;
-
-$font: roundedElegance;
+@import "./node_modules/bulma/bulma.sass";
+@import "variables";
+@import "fonts";
 
 html, body {
   padding: 0;
   margin: 0;
-  font-family: $font;
+  font-family: $font-text;
   background-color: $color-dark;
 
   &.has-navbar-fixed-top {
     padding-top: 7.25em;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
 }
 
 .section.is-full-height {
@@ -86,12 +80,24 @@ h1.title {
   &.gradient-right {
     background: linear-gradient(to right, $color-purple, $color-pink);
   }
+
+  &.navbar-burger {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 4px;
+    color: $color-light;
+    box-shadow: none;
+
+    &.is-active {
+      color: $color-pink;
+    }
+  }
 }
 
 nav.navbar {
   position: relative;
   z-index: 300;
-  padding: 2em 4em;
+  /*padding: 2em 4em;*/
   font-weight: bold;
   transition: ease-in-out all .4s;
 
@@ -132,10 +138,14 @@ nav.navbar {
     .logo-white {
       display: none;
     }
+
+    .navbar-burger {
+      color: $color-dark;
+    }
   }
 
   &.scrolled {
-    padding: 1em 4em;
+    /*padding: 1em 4em;*/
 
     .navbar-item {
       &.active {
@@ -144,6 +154,14 @@ nav.navbar {
       img {
         max-height: 2.5em;
       }
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop-start) {
+    padding: 2em 4em;
+
+    &.scrolled {
+      padding: 1em 4em;
     }
   }
 }
@@ -224,7 +242,11 @@ nav.navbar {
   #splash-footer {
     display: block;
     text-align: right;
-    margin: 0 -3em;
+    padding: 0 1em;
+
+    @media (min-width: $breakpoint-desktop-start) {
+      margin: 0 -2em;
+    }
   }
 }
 

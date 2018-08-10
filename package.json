@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/JakeMotta/ambii_landing_page#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "animate.css": "^3.7.0",
+    "bulma": "^0.7.1",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1"

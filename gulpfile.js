@@ -1,22 +1,24 @@
 var gulp     = require('gulp');
 var sass     = require('gulp-sass');
 var uglify   = require('gulp-uglify');
-var rename   = require('gulp-rename');
+var concat   = require('gulp-concat');
+var csso     = require('gulp-csso');
 
-var sassExtension = 'scss/*.scss';
-var destExtension = 'css/';
+var sassSourcePath = 'scss/*.scss';
+var sassDestinationPath = 'css/';
 
-
-gulp.task('stylesExtension', function(){
-  gulp.src(sassExtension)
+gulp.task('styles', function(){
+  gulp.src([
+  	'node_modules/animate.css/animate.min.css',
+  	sassSourcePath
+  ])
   .pipe(sass().on('error', sass.logError))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest(destExtension));
+  .pipe(concat('style.min.css'))
+  .pipe(csso())
+  .pipe(gulp.dest(sassDestinationPath));
 });
 
 gulp.task('default', function() {
-  gulp.start('stylesExtension')
-
-  gulp.watch(sassExtension, ['stylesExtension']);
-  
+  gulp.start('styles');
+  gulp.watch(sassSourcePath, ['styles']);
 });
