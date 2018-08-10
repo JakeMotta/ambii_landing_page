@@ -40,18 +40,27 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1.title {
-  font-size: 3em;
+.title {
+  @media (min-width: $breakpoint-desktop-start) {
+    font-size: 3em;
+  }
 }
 
 .section-name {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
+
+  @media (min-width: $breakpoint-desktop-start) {
+    font-size: 2em;
+  }
 }
 
 .subtitle {
-  font-size: 1.5em;
   font-weight: bold;
+
+  @media (min-width: $breakpoint-desktop-start) {
+    font-size: 1.5em;
+  }
 }
 
 .button {
@@ -97,9 +106,8 @@ h1.title {
 nav.navbar {
   position: relative;
   z-index: 300;
-  /*padding: 2em 4em;*/
   font-weight: bold;
-  transition: ease-in-out all .4s;
+  transition: ease-in-out all $animation-speed;
 
   &.is-transparent {
     background: transparent;
@@ -118,15 +126,14 @@ nav.navbar {
   }
 
   .navbar-item {
-    
-    transition: ease-in-out all .4s;
+    transition: ease-in-out all $animation-speed;
     &:hover {
       background-color: $color-dark !important;
     }
 
     img {
       max-height: 3rem;
-      transition: ease-in-out all .4s;
+      transition: ease-in-out all $animation-speed;
     }
 
     &.is-active {
@@ -169,8 +176,6 @@ nav.navbar {
   }
 
   &.scrolled {
-    /*padding: 1em 4em;*/
-
     .navbar-item {
       &.is-active {
         color: $color-light !important;
@@ -187,8 +192,7 @@ nav.navbar {
     .navbar-item {
       flex-direction: column;
       justify-content: center;
-
-      transition: ease-in-out all .4s;
+      transition: ease-in-out all $animation-speed;
 
        &:after {
         content:'';
@@ -198,10 +202,8 @@ nav.navbar {
         background-color: transparent;
         border-radius: 50%;
         display: inline-block;
-
-        transition: ease-in-out all .4s;
+        transition: ease-in-out all $animation-speed;
       }
-    
     }
 
     &.scrolled {
@@ -274,7 +276,7 @@ nav.navbar {
   }
 
   .cta-text {
-    margin-top: 3em;
+    margin: 3em 0 1em 0;
     color: $color-light;
     font-size: 1.5em;
   }
@@ -284,10 +286,22 @@ nav.navbar {
       flex: 1;
     }
 
+    .submit-wrapper {
+      margin-left: -1.5em;
+      z-index: 30;
+
+      .submit {
+        border-radius: 1.5em !important;
+      }
+    }
+
     .input {
+      padding: 1em;
       border: 2px solid $color-purple;
       background-color: $color-dark;
       color: $color-light;
+      border-top-left-radius: 1.5em !important;
+      border-bottom-left-radius: 1.5em !important;
 
       &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: $color-light;
@@ -301,7 +315,7 @@ nav.navbar {
       &:-moz-placeholder { /* Firefox 18- */
         color: $color-light;
       }
-    }
+    } 
   }
 
   #splash-footer {
@@ -356,6 +370,10 @@ nav.navbar {
 
   .columns {
     justify-content: space-between;
+
+    @media (min-width: $breakpoint-tablet-start) {
+      flex-direction: row-reverse;
+    }
   }
 
   .subtitle {
@@ -466,9 +484,9 @@ nav.navbar {
       border: 2px solid $color-pink;
       background: linear-gradient(to right, rgba($color-purple, .4), rgba($color-pink, .4));
       color: $color-light;
-      border-bottom-left-radius: 1.5em;
-      border-top-left-radius: 1.5em;
       padding: 1em;
+      border-top-left-radius: 1.5em !important;
+      border-bottom-left-radius: 1.5em !important;
 
       &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: $color-light;
@@ -482,14 +500,17 @@ nav.navbar {
       &:-moz-placeholder { /* Firefox 18- */
         color: $color-light;
       }
+
     }
 
     .submit-wrapper {
       margin-left: -1.5em;
       z-index: 30;
+
       .submit {
         border-radius: 1.5em !important;
       }
+      
     }
   }
 

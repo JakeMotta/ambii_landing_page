@@ -26,15 +26,22 @@ $(document).ready(function(){
   // scroll animations
   new WOW().init();
 
+  // smoothscroll
+  var scroll = new SmoothScroll('a[href*="#"]');
+
+  // nav styles
   $(document).scroll(function () {
 
     var $nav = $(".is-fixed-top");
     $window = $(window);
-    var lightDistance = $('#influence').offset().top;
+    var socializeDistance = $('#socialize').offset().top -1;
+    var influenceDistance = $('#influence').offset().top -1;
+    var discoverDistance = $('#discover').offset().top -1;
+    var footerDistance = $('#footer').offset().top -1;
 
+    // nav background
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-
-    if ( $window.scrollTop() >= lightDistance ) {
+    if ($window.scrollTop() >= influenceDistance ) {
       if($nav.hasClass("is-dark")) {
         $nav.removeClass("is-dark").addClass("is-light");
       }
@@ -43,6 +50,23 @@ $(document).ready(function(){
       if($nav.hasClass("is-light")) {
         $nav.removeClass("is-light").addClass("is-dark");
       }
+    }
+
+    // active-sections
+    if($window.scrollTop() >= socializeDistance && $window.scrollTop() < influenceDistance) {
+      $(".is-nav-link").not('[href$="#socialize"]').removeClass("is-active");
+      $('.is-nav-link[href$="#socialize"]').addClass('is-active');
+    }
+    else if($window.scrollTop() >= influenceDistance && $window.scrollTop() < discoverDistance) {
+      $(".is-nav-link").not('[href$="#influence"]').removeClass("is-active");
+      $('.is-nav-link[href$="#influence"]').addClass('is-active');
+    }
+    else if($window.scrollTop() >= discoverDistance && $window.scrollTop() < footerDistance) {
+      $(".is-nav-link").not('[href$="#discover"]').removeClass("is-active");
+      $('.is-nav-link[href$="#discover"]').addClass('is-active');
+    }
+    else {
+      $(".is-nav-link").removeClass('is-active');
     }
   });
 });
