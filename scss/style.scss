@@ -284,9 +284,15 @@ nav.navbar {
       border-top-left-radius: 1.5em !important;
       border-bottom-left-radius: 1.5em !important;
 
-      &::-webkit-input-placeholder, /* Chrome/Opera/Safari */
-      &::-moz-placeholder,  /* Firefox 19+ */
-      &:-ms-input-placeholder, /* IE 10+ */
+      &::-webkit-input-placeholder {/* Chrome/Opera/Safari */
+        color: $color-light;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: $color-light;
+      }
+      &:-ms-input-placeholder {/*  IE 10+ */ 
+        color: $color-light;
+      }
       &:-moz-placeholder { /* Firefox 18- */
         color: $color-light;
       }
@@ -449,9 +455,15 @@ nav.navbar {
       border-top-left-radius: 1.5em !important;
       border-bottom-left-radius: 1.5em !important;
 
-      &::-webkit-input-placeholder, /* Chrome/Opera/Safari */
-      &::-moz-placeholder,  /* Firefox 19+ */
-      &:-ms-input-placeholder, /* IE 10+ */
+      &::-webkit-input-placeholder {/* Chrome/Opera/Safari */
+        color: $color-light;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: $color-light;
+      }
+      &:-ms-input-placeholder {/*  IE 10+ */ 
+        color: $color-light;
+      }
       &:-moz-placeholder { /* Firefox 18- */
         color: $color-light;
       }
