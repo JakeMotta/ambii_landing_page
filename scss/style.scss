@@ -40,6 +40,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.container.is-fluid {
+  @media (min-width: $breakpoint-desktop-start) {
+    margin: 0 auto;
+  }
+}
+
 .title {
   @media (min-width: $breakpoint-desktop-start) {
     font-size: 3em;
@@ -211,7 +217,7 @@ nav.navbar {
 
 #splash {
   background-color: $color-dark;
-  background-image: url('../images/wave.svg');
+  background-image: url('../../images/wave.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: bottom;
@@ -330,7 +336,7 @@ nav.navbar {
 
   .ellipse-pink {
     z-index: 10;
-    background-image: url('../images/ellipse-pink.svg');
+    background-image: url('../../images/ellipse-pink.svg');
     background-repeat: no-repeat;
     position: absolute;
     right: 5%;
@@ -363,7 +369,7 @@ nav.navbar {
   }
 
   .ellipse-purple {
-    background-image: url('../images/ellipse-purple.svg');
+    background-image: url('../../images/ellipse-purple.svg');
     background-repeat: no-repeat;
     position: absolute;
     left: -5%;
@@ -377,6 +383,7 @@ nav.navbar {
 #discover {
   position: relative;
   background-color: $color-pink;
+  
   color: $color-light;
 
   h1 {
@@ -397,34 +404,16 @@ nav.navbar {
     justify-content: center;
   }
 
-  .bubble-event {
-    position: absolute;
-    left: 3em;
-    top: 50%;
-    width: 200px;
-    z-index: 10;
-  }
-
-  .bubble-phone {
-    position: absolute;
-    width: 150px;
-    left: 30%;
-    top: 40%;
-  }
-
-  .bubble-folks {
-    position: absolute;
-    width: 250px;
-    bottom: 4em;
-    left: 30%;
-    z-index: 10;
-  }
-
   .bubble-cut {
     position: absolute;
     bottom: 0px;
-    left: -2em;
-    width: 40%;
+    left: 0;
+    width: 100%;
+
+    @media (min-width: $breakpoint-desktop-start) {
+      left: -2em;
+      width: 60%;
+    }
   }
 }
 
