@@ -94,11 +94,17 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
     border-color: transparent;
     border-radius: 4px;
-    color: $color-light;
+    color: $color-pink !important;
     box-shadow: none;
+
 
     &.is-active {
       color: $color-pink;
+    }
+
+    &:focus {
+      outline: none !important;
+      box-shadow: none;
     }
   }
 }
@@ -109,19 +115,52 @@ nav.navbar {
   font-weight: bold;
   transition: ease-in-out all $animation-speed;
 
-  &.is-transparent {
-    background: transparent;
+  @media (min-width: $breakpoint-desktop-start) {
+    padding: 2em 4em;
   }
-  
+
   &.is-dark {
     background-color: $color-dark;
+  }
 
-    .logo-color {
-      display: initial;
-    }
+  &.is-light {
+    background-color: $color-light;
+  }
 
-    .logo-white {
-      display: none;
+  &.scrolled {
+    @media (min-width: $breakpoint-desktop-start) {
+      padding: 1em 4em;
+
+      .navbar-item {   
+        color: $color-grey !important;     
+        img {
+          max-height: 2.5em;
+        }
+      }
+
+      &.is-dark {
+        .navbar-item {
+          &.is-active {
+            color: $color-light !important;
+          }
+
+          &:hover {
+            color: $color-light !important;
+          }
+        }
+      }
+
+      &.is-light {
+        .navbar-item {
+          &.is-active {
+            color: $color-dark !important;
+          }
+
+          &:hover {
+            color: $color-dark !important;
+          }
+        }
+      }
     }
   }
 
@@ -129,66 +168,23 @@ nav.navbar {
     background-color: transparent !important;
     transition: ease-in-out all $animation-speed;
 
-    img {
-      max-height: 3rem;
-      transition: ease-in-out all $animation-speed;
+    &:hover,
+    &:focus {
+      color: $color-pink !important;
     }
 
-    &.is-active {
-      &:after {
-        background-color: $color-pink;
-      }
-    }
-
-    &.is-spaced {
-      @media (min-width: $breakpoint-tablet-start) {
-        margin-left: 3em
-      }
-    }
-  }
-
-  &.is-light {
-    .logo-color {
-      display: initial;
-    }
-
-    .logo-white {
-      display: none;
-    }
-
-    .navbar-burger {
-      color: $color-dark;
-    }
-
-    .navbar-item {
-      background-color: !important;
-
-      &.is-active {
-        color: $color-dark !important;
-      }
-    }
-  }
-
-  &.scrolled {
-    .navbar-item {
-      &.is-active {
-        color: $color-light !important;
-      }
-      img {
-        max-height: 2.5em;
-      }
-    }
-  }
-
-  @media (min-width: $breakpoint-desktop-start) {
-    padding: 2em 4em;
-
-    .navbar-item {
+    @media (min-width: $breakpoint-desktop-start) {
       flex-direction: column;
       justify-content: center;
       transition: ease-in-out all $animation-speed;
 
-       &:after {
+      &.is-active {
+        &:after {
+          background-color: $color-pink;
+        }
+      }
+
+      &:after {
         content:'';
         height: 4px;
         margin-top: 5px;
@@ -200,28 +196,14 @@ nav.navbar {
       }
     }
 
-    &.scrolled {
-      padding: 1em 4em;
+    img {
+      max-height: 3rem;
+      transition: ease-in-out all $animation-speed;
+    }
 
-      .navbar-item {
-        color: $color-grey !important;
-
-        &.is-active {
-          color: $color-light !important;
-        }
-      }
-
-      &.is-light {
-        .navbar-item {
-
-          &:hover {
-            background-color: $color-light !important;
-          }
-
-          &.is-active {
-            color: $color-dark !important;
-          }
-        }
+    &.is-spaced {
+      @media (min-width: $breakpoint-desktop-start) {
+        margin-left: 3em;
       }
     }
   }
@@ -494,7 +476,6 @@ nav.navbar {
       &:-moz-placeholder { /* Firefox 18- */
         color: $color-light;
       }
-
     }
 
     .submit-wrapper {
@@ -504,7 +485,6 @@ nav.navbar {
       .submit {
         border-radius: 1.5em !important;
       }
-      
     }
   }
 

@@ -18,10 +18,14 @@ $(document).ready(function(){
         // Toggle the class on both the "navbar-burger" and the "navbar-menu"
         $el.classList.toggle('is-active');
         $target.classList.toggle('is-active');
-
       });
     });
   }
+
+  $('.navbar-item').click(function() {
+    $('.navbar-burger').removeClass('is-active');
+    $('.navbar-menu').removeClass('is-active');
+  });
 
   // scroll animations
   new WOW().init();
@@ -31,7 +35,6 @@ $(document).ready(function(){
 
   // nav styles
   $(document).scroll(function () {
-
     var $nav = $(".is-fixed-top");
     $window = $(window);
     var socializeDistance = $('#socialize').offset().top -1;
