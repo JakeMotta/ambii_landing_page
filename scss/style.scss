@@ -19,10 +19,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .section.is-full-height {
   min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  padding-top: 4em;
 }
 
 .is-full-width {
   width: 100% !important;
+}
+
+.has-text-centered-mobile {
+  text-align: center;
+
+  @media (min-width: $breakpoint-tablet-start) {
+    text-align: inherit;
+  }
 }
 
 .is-vertical-center {
@@ -39,6 +50,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-end;
   }
 }
+
 
 .container.is-fluid {
   @media (min-width: $breakpoint-desktop-start) {
@@ -62,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .subtitle {
-  font-weight: bold;
+  font-weight: 400;
 
   @media (min-width: $breakpoint-desktop-start) {
     font-size: 1.5em;
@@ -119,9 +131,24 @@ nav.navbar {
   z-index: 300;
   font-weight: bold;
   transition: ease-in-out all $animation-speed;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+  &+ .section{
+    min-height: calc(100vh - 7.25em);
+    height: calc(100vh - 7.25em);
+    max-height: calc(100vh - 7.25em);
+  }
 
   @media (min-width: $breakpoint-desktop-start) {
     padding: 2em 4em;
+  }
+
+  .navbar-brand {
+    align-items: center;
+  }
+
+  .navbar-menu {
+    transition: ease-in-out all $animation-speed;
   }
 
   &.is-dark {
@@ -133,6 +160,13 @@ nav.navbar {
   }
 
   &.scrolled {
+
+    .navbar-item {
+      img {
+        max-height: 2rem;
+      }
+    }
+
     @media (min-width: $breakpoint-desktop-start) {
       padding: 1em 4em;
 
@@ -178,10 +212,24 @@ nav.navbar {
       color: $color-pink !important;
     }
 
+    img {
+      max-height: 2.5rem;
+      transition: ease-in-out all $animation-speed;
+    }
+
+    &.is-active {
+      color: $color-pink;
+    }
+
     @media (min-width: $breakpoint-desktop-start) {
       flex-direction: column;
       justify-content: center;
       transition: ease-in-out all $animation-speed;
+
+      img {
+        max-height: 3rem;
+        transition: ease-in-out all $animation-speed;
+      }
 
       &.is-active {
         &:after {
@@ -199,11 +247,6 @@ nav.navbar {
         display: inline-block;
         transition: ease-in-out all $animation-speed;
       }
-    }
-
-    img {
-      max-height: 3rem;
-      transition: ease-in-out all $animation-speed;
     }
 
     &.is-spaced {
@@ -249,11 +292,18 @@ nav.navbar {
     &:last-child {
       margin-right: 0;
     }
+
+
   }
 
   i {
     color: $color-light;
     font-size: 1.5em;
+
+    &:hover {
+      color: $color-pink;
+      transition: ease-in-out color $animation-speed;
+    }
   }
 
   .cta-text {
@@ -407,7 +457,7 @@ nav.navbar {
     position: absolute;
     bottom: 0px;
     left: 0;
-    width: 100%;
+    width: 95%;
 
     @media (min-width: $breakpoint-tablet-start) {
       width: 85%;
@@ -484,6 +534,12 @@ nav.navbar {
       color: $color-light;
       display: block;
       font-size: .75em;
+
+      &:hover {
+        color: $color-pink;
+        transition: ease-in-out color $animation-speed;
+
+      }
     }
   }
 
