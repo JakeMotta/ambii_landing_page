@@ -9,7 +9,11 @@ html, body {
   background-color: $color-dark;
 
   &.has-navbar-fixed-top {
-    padding-top: 7.25em;
+    padding-top: 3.75em;
+
+    @media (min-width: $breakpoint-tablet-start) {
+      padding-top: 7.25em;
+    }
   }
 }
 
@@ -21,11 +25,15 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 100vh;
   height: 100vh;
   max-height: 100vh;
-  padding-top: 4em;
+  // padding-top: 4em;
 }
 
 .is-full-width {
   width: 100% !important;
+}
+
+.is-spaced-evenly {
+  justify-content: space-evenly !important;
 }
 
 .has-text-centered-mobile {
@@ -81,6 +89,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.image {
+  max-width: 80%;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-tablet-start) {
+    max-width: 100%;
+  }
+
+
+}
 .button {
   border-radius: 1.5em;
   padding-left: 1.5em;
@@ -134,13 +152,19 @@ nav.navbar {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 
   &+ .section{
-    min-height: calc(100vh - 7.25em);
-    height: calc(100vh - 7.25em);
-    max-height: calc(100vh - 7.25em);
+    min-height: calc(100vh - 3.75em);
+    height: calc(100vh - 3.75em);
+    max-height: calc(100vh - 3.75em);
+
+    @media (min-width: $breakpoint-desktop-start) {
+      min-height: calc(100vh - 7.25em);
+      height: calc(100vh - 7.25em);
+      max-height: calc(100vh - 7.25em);
+    }
   }
 
   @media (min-width: $breakpoint-desktop-start) {
-    padding: 2em 4em;
+    padding: 2em 2em;
   }
 
   .navbar-brand {
@@ -168,7 +192,7 @@ nav.navbar {
     }
 
     @media (min-width: $breakpoint-desktop-start) {
-      padding: 1em 4em;
+      padding: 1em 2em;
 
       .navbar-item {   
         color: $color-grey !important;     
@@ -263,6 +287,8 @@ nav.navbar {
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: bottom;
+  flex-direction: column;
+  justify-content: center;
 
   .columns {
     justify-content: space-between;
@@ -307,7 +333,6 @@ nav.navbar {
   }
 
   .cta-text {
-    margin: 3em 0 1em 0;
     color: $color-light;
     font-size: 1.5em;
   }
@@ -352,10 +377,11 @@ nav.navbar {
   #splash-footer {
     display: block;
     text-align: right;
-    padding: 0 1em;
+    width: 100%;
+    margin-top: auto;
 
-    @media (min-width: $breakpoint-desktop-start) {
-      margin: 0 -2em;
+    @media (min-width: $breakpoint-tablet-start) {
+      padding: 2em;
     }
   }
 }
