@@ -97,8 +97,15 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
   }
 
+  &.display-image {
+    max-width: 350px;
 
+    .is-bordered {
+      border: 5px solid $color-pink;
+    }
+  }
 }
+
 .button {
   border-radius: 1.5em;
   padding-left: 1.5em;
@@ -291,7 +298,7 @@ nav.navbar {
   justify-content: center;
 
   .columns {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   h1 {
@@ -400,7 +407,7 @@ nav.navbar {
   }
 
   .columns {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .column {
@@ -426,7 +433,7 @@ nav.navbar {
   color: $color-dark;
 
   .columns {
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     @media (min-width: $breakpoint-tablet-start) {
       flex-direction: row-reverse;
