@@ -32,6 +32,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100% !important;
 }
 
+.margin-top-auto {
+  margin-top: auto !important;
+}
+
+.is-full-height {
+  height: 100% !important;
+}
+
 .is-spaced-evenly {
   justify-content: space-evenly !important;
 }
@@ -507,6 +515,9 @@ nav.navbar {
   background-color: $color-dark;
   color: $color-light;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h1 {
     color: $color-light;
@@ -583,4 +594,66 @@ nav.navbar {
     bottom: -10%;
     left: -5%;
   }
+}
+
+.circles {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: transparent;
+  
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  .wave {
+    // opacity: .4;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    background: $color-purple;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-bottom: -250px;
+    transform-origin: 50% 57%;
+    border-radius: 43%;
+    animation: drift 7000ms infinite linear;
+  }
+
+  .wave.-one {
+    // animation: drift 7000ms infinite linear;
+    // opacity: .1;
+    // background: $color-pink;
+  }
+
+  .wave.-two {
+    animation: drift 3000ms infinite linear;
+    // opacity: .1;
+    background: $color-pink;
+  }
+
+
+  .wave-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 200px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    text-indent: .3em;
+  }
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
