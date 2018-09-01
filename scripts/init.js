@@ -72,4 +72,12 @@ $(document).ready(function(){
       $(".is-nav-link").removeClass('is-active');
     }
   });
+
+  // count up
+  $('.counter').counterUp({
+    delay: 100,
+    time: 500,
+    offset: 70,
+    beginAt: 0
+  });
 });
