@@ -343,11 +343,15 @@ nav.navbar {
     }
   }
 
-  .cta-text {
-    color: $color-light;
-    font-size: 1.5em;
-  }
+  .cta-wrapper {
+    margin-top: 1em;
 
+    .cta-text {
+      color: $color-light;
+      font-size: 1.5em;
+    }
+  }
+  
   .subscribe-form {
     max-width: 500px;
     .input-wrapper {
@@ -495,15 +499,7 @@ nav.navbar {
     position: absolute;
     bottom: 0px;
     left: 0;
-    width: 95%;
-
-    @media (min-width: $breakpoint-tablet-start) {
-      width: 80%;
-    }
-
-    @media (min-width: $breakpoint-desktop-start) {
-      width: 60%;
-    }
+    width: 60%;
   }
 }
 
