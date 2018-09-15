@@ -159,7 +159,6 @@ nav.navbar {
   z-index: 300;
   font-weight: bold;
   transition: ease-in-out all $animation-speed;
-  // box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 
   &+ .section{
     min-height: calc(100vh - 3.75em);
@@ -300,9 +299,58 @@ nav.navbar {
   background-position-y: bottom;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: .1rem;
+
+  @media (min-width: $breakpoint-desktop-start) {
+    padding-bottom: 3.5rem;
+  }
+
+  .container {
+    flex: 1;
+    display: flex; 
+    flex-flow: row wrap;
+    margin-bottom: 5em;
+
+    @media (min-width: $breakpoint-desktop-start) {
+      margin-bottom: 0;
+    }
+  }
 
   .columns {
-    justify-content: space-evenly;
+    flex: 1;
+    display: flex; 
+    flex-flow: row wrap; 
+    justify-content: space-around;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between !important;
+
+      @media (min-width: $breakpoint-desktop-start) {
+        justify-content: center !important;
+      }
+
+      .splash-heading {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $breakpoint-desktop-start) {
+          flex-grow: 0;
+        }
+
+        > div {
+          flex: 1;
+        }
+
+        .field {
+          @media (min-width: $breakpoint-desktop-start) {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
   }
 
   h1 {
@@ -317,11 +365,7 @@ nav.navbar {
     color: $color-light;
   }
 
-  .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  
 
   .social-link {
     margin-right: 1em;
@@ -329,8 +373,6 @@ nav.navbar {
     &:last-child {
       margin-right: 0;
     }
-
-
   }
 
   i {
@@ -395,9 +437,14 @@ nav.navbar {
     text-align: right;
     width: 100%;
     margin-top: auto;
+    margin-bottom: 2em;
 
     @media (min-width: $breakpoint-tablet-start) {
       padding: 2em;
+    }
+
+    @media (min-width: $breakpoint-tablet-start) {
+      margin-bottom: 0;
     }
   }
 }
@@ -430,14 +477,15 @@ nav.navbar {
     background-image: url('../../images/ellipse-pink.svg');
     background-repeat: no-repeat;
     position: absolute;
-    right: 5%;
-    bottom: -10%;
+    right: 50px;
+    bottom: -100px;
     width: 250px;
     height: 250px;
   }
 }
 
 #influence {
+  position: relative;
   background-color: white;
   color: $color-dark;
 
@@ -463,10 +511,10 @@ nav.navbar {
     background-image: url('../../images/ellipse-purple.svg');
     background-repeat: no-repeat;
     position: absolute;
-    left: -5%;
-    bottom: -220%;
-    width: 400px;
-    height: 400px;
+    left: -25px;
+    bottom: -150px;
+    width: 300px;
+    height: 300px;
     z-index: 10;
   }
 }
@@ -523,6 +571,9 @@ nav.navbar {
       color: $color-pink;
       font-weight: normal;
     }
+  }
+  i {
+    font-size: 1.5em;
   }
 
   .column {
@@ -581,9 +632,9 @@ nav.navbar {
   .bubble-gradient {
     z-index: 1;
     position: absolute;
-    width: 30%;
-    bottom: -10%;
-    left: -5%;
+    width: 400px;
+    bottom: -100px;
+    right: -100px;
   }
 }
 
@@ -592,10 +643,10 @@ nav.navbar {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-top: 10%;
 
   @media (min-width: $breakpoint-desktop-start) {
     flex-wrap: nowrap;
+    margin-top: 10%;
   }
 }
 
