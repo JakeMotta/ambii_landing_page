@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-@font-face {
-    font-family: roundedElegance;
-    src: url(../../font/Rounded_Elegance.ttf);
-}
-
-$font-heading: roundedElegance;
+$font-heading: 'Open Sans', sans-serif;
 $font-text: 'Lato', sans-serif;
